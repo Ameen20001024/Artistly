@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         </ArtistProvider>
 
         <footer className="flex justify-center items-center h-[10vh] border-t-2 px-3 bg-slate-900">
-          we'll have footer here
+          we will have footer here
         </footer>
 
       </body>
