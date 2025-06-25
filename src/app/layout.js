@@ -1,15 +1,17 @@
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import { ArtistProvider } from "@/components/contexts/ArtistsArraycontext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata = {
   title: "Create Next App",
@@ -18,11 +20,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    <html lang="en" className="dark">
+      <body className="flex flex-col overflow-hidden"
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className="flex justify-between items-center h-[10vh] border-b-2 px-3 bg-slate-900">
+          <div>
+            Logo
+          </div>
+          <Navbar/>
+        </header>
+
+        <ArtistProvider>
+          {children}
+        </ArtistProvider>
+
+        <footer className="flex justify-center items-center h-[10vh] border-t-2 px-3 bg-slate-900">
+          we'll have footer here
+        </footer>
+
       </body>
     </html>
   );
