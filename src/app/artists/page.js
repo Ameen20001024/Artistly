@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
 
-const page = () => {
+const Page = () => {
 
     const { artistListArray } = useArtistArrayContext()
     const [filteredArtists, setFilteredArtists] = useState([])
@@ -168,4 +168,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
