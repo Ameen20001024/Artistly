@@ -2,9 +2,9 @@ import Form from "@/components/Form"
 
 const page = () => {
   return (
-    <div className='h-[80vh] overflow-scroll no-scrollbar px-10 py-10'>
+    <div className='h-[80vh] overflow-scroll no-scrollbar lg:px-10 py-10 md:pb-0 lg:py-10'>
       
-        <h1 className='text-5xl pb-8 text-center text font-bold border-b-2 w-[70vw] mx-auto'>
+        <h1 className='text-4xl md:text-5xl pb-8 lg:pb-8 text-center text font-bold border-b-2 w-[80vw] mx-auto'>
             Join Artistly — Get Discovered. Get Booked.
         </h1>
 

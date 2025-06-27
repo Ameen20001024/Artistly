@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       <body className="flex flex-col overflow-hidden"
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="flex justify-between items-center h-[10vh] border-b-2 px-3 bg-slate-900">
+        <header className="flex justify-between items-center h-[10vh] border-b-2 px-3 max-w-[100vw] bg-slate-900">
           <div>
             Logo
           </div>

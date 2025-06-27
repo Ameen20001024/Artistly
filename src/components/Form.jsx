@@ -77,42 +77,42 @@ const Form = () => {
     }
 
     return (
-        <div className="container p-6 ">
+        <div className="container lg:p-6 max-w-[100vw] overflow-x-hidden">
 
-            <form action="" className='flex flex-col gap-10 p-6 justify-center border-b-2 items-center' onSubmit={handleSubmit(onSubmit)}>
+            <form action="" className='flex flex-col gap-12 lg:gap-12 p-6 mt-3 md:mt-0 justify-center border-b-2 items-center' onSubmit={handleSubmit(onSubmit)}>
 
-                <div className='flex gap-30'>
+                <div className='flex flex-col md:flex-row gap-12 md:gap-15 lg:gap-30'>
 
-                    <div className='flex flex-col gap-16 justify-center items-center'>
+                    <div className='flex flex-col gap-12 lg:gap-16 justify-center items-center'>
                         
-                        <div className='flex flex-col gap-10 pb-2 text-lg justify-center items-center '>
+                        <div className='pb-2 text-lg justify-center items-center '>
 
                             {/* <label htmlFor="fullname">Full Name :</label> */}
-                            <input  type="text" id='fullname' placeholder='Enter Full Name' className='rounded-full border-2 border-green-500 w-full py-1.5 px-12 justify-center text-center' {...register("fullname", {required: {value:true, message: "This field is required"}, minLength: {value:3, message: "minimum 3 charecters required"}})} />
+                            <input  type="text" id='fullname' placeholder='Enter Full Name' className='rounded-full border-2 border-slate-500 w-full py-1.5 px-12 justify-center text-center' {...register("fullname", {required: {value:true, message: "This field is required"}, minLength: {value:3, message: "minimum 3 charecters required"}})} />
                             {errors.fullname && <div className='text-red-500'>{errors.fullname.message}</div> }
 
                         </div>
 
-                        <div className='flex flex-col gap-10 pb-2 text-lg justify-center items-center'>
+                        <div className='pb-2 text-lg justify-center items-center'>
                             {/* <label htmlFor="email"> Email :</label> */}
-                            <input  type="email" id='email' placeholder='Enter your Email address' className='rounded-full border-2 border-green-500 w-full py-1.5 px-12 justify-center text-center' {...register("email", {required: {value:true, message: "This field is required"}, minLength: {value:13, message: "minimum 13 charecters required"}})} />
+                            <input  type="email" id='email' placeholder='Enter your Email address' className='rounded-full border-2 border-slate-500 w-full py-1.5 px-12 justify-center text-center' {...register("email", {required: {value:true, message: "This field is required"}, minLength: {value:13, message: "minimum 13 charecters required"}})} />
                             {errors.email && <div className='text-red-500'>{errors.email.message}</div> }
                         </div>
 
-                        <div className="flex flex-col gap-10 text-lg justify-center items-center ">
+                        <div className="text-lg justify-center items-center ">
                         
                             {/* <label htmlFor="location">location : </label> */}
-                            <input  placeholder='Enter Location' id='location' type="text" className='rounded-full border-2 border-green-500 w-full py-1.5 px-12 justify-center text-center' {...register("location", {required: {value:true, message: "This field is required"}, minLength: {value:3, message: "minimum 3 charecters required"}, maxLength:{value:15, message:"maximum number of charecters is 15"}})} />
+                            <input  placeholder='Enter Location' id='location' type="text" className='rounded-full border-2 border-slate-500 w-full py-1.5 px-12 justify-center text-center' {...register("location", {required: {value:true, message: "This field is required"}, minLength: {value:3, message: "minimum 3 charecters required"}, maxLength:{value:15, message:"maximum number of charecters is 15"}})} />
                             {errors.location && <div className=' text-red-500'> {errors.location.message} </div>}
                         </div>
 
                     </div>
 
-                    <div className=' flex flex-col items-center justify-center gap-11 pb-1 pt-1 '>
+                    <div className=' flex flex-col items-center justify-center gap-12 lg:gap-14 text-gray-400 '>
 
-                        <div className="flex flex-col gap-10 pb-2 text-lg justify-center items-center w-[20vw]">
+                        <div className="flex flex-col gap-10 lg:pb-2 text-lg justify-center items-center w-full lg:w-[20vw]">
 
-                            <select id="feeRange" className="rounded-full border-2 border-green-500 w-full py-2 px-8 text-center"
+                            <select id="feeRange" className="rounded-full border-2 border-slate-500 w-full py-2 px-8 text-center"
                                 {...register("feeRange", {required: { value: true, message: "Please select a fee range" },})}defaultValue="">
 
                                 <option value="" disabled>Select Fee Range</option>
@@ -127,10 +127,10 @@ const Form = () => {
                             )}
                         </div>
                         
-                        <div className="flex flex-col items-start gap-2">
-                            <label className="font-semibold">Select Artist Categories:</label>
+                        <div className="flex flex-col items-center gap-1">
+                            <label className="font-medium text-lg text-center">Select Artist Categories</label>
 
-                            <div className='flex gap-5'>
+                            <div className='flex gap-4'>
                                 
                                 {categories.map((category) => (
 
@@ -165,13 +165,13 @@ const Form = () => {
                             )}
                         </div>
 
-                        <div className="w-[20vw] flex flex-col gap-2">
-                            <label className="font-semibold">Languages Spoken</label>
+                        <div className="w-full lg:w-[20vw] flex flex-col gap-2">
+                            {/* <label className="font-semibold">Languages Spoken</label> */}
 
                             <Popover>
                                 <PopoverTrigger asChild >
-                                    <div className="w-full justify-center py-1 rounded-3xl border-2 border-green-500">
-                                        <Button variant="ghost" className=' mx-auto w-full' >
+                                    <div className="w-full justify-center py-1 rounded-3xl border-2 border-slate-500">
+                                        <Button variant="ghost" className='text-lg font-medium mx-auto w-full' >
                                             {selectedLanguages.length > 0
                                             ? selectedLanguages.join(", ")
                                             : "Select Languages"}
@@ -188,7 +188,7 @@ const Form = () => {
                                             checked={selectedLanguages.includes(lang)}
                                             onCheckedChange={() => toggleLanguage(lang)}
                                         />
-                                        <label htmlFor={lang} className="text-sm">{lang}</label>
+                                        {/* <label htmlFor={lang} className="text-sm">{lang}</label> */}
                                         </div>
                                     ))}
                                 </PopoverContent>
@@ -203,24 +203,22 @@ const Form = () => {
 
                 </div>
                 
-                <div>
+                
+                <div className="flex flex-col gap-3 text-lg justify-center w-full md:w-[87vw] lg:w-[47.7vw] h-[12vh] md:h-[12vh] lg:h-[18vh] items-center">
+                    
+                    <textarea  placeholder='Bio' id='bio' className='rounded-3xl border-2 border-slate-500 w-[70vw] md:w-full h-full overflow-scroll no-scrollbar py-1.5 px-1.5 lg:px-12 justify-center text-center  items-center' {...register("bio", {required: {value:true, message: "This field is required"}, minLength: {value:50, message: "minimum 50 charecters required"}, maxLength:{value:200, message:"maximum number of charecters is 200"}})} />
 
-                    <div className="flex flex-col gap-10 text-lg justify-center w-[47.7vw] h-[18vh] items-center">
-                        
-                        <textarea  placeholder='Bio' id='bio' className='rounded-3xl border-2 border-green-500 w-full h-full py-1.5 px-12 justify-center text-center  items-center' {...register("bio", {required: {value:true, message: "This field is required"}, minLength: {value:50, message: "minimum 50 charecters required"}, maxLength:{value:200, message:"maximum number of charecters is 200"}})} />
-                        {errors.bio && <div className='text-red-500'> {errors.bio.message} </div>}
-
-                    </div>
+                    {errors.bio && <div className='text-red-500'> {errors.bio.message} </div>}
 
                 </div>
 
-                <div className="flex flex-col gap-10 text-lg justify-center w-[25vw] items-center">
+                <div className="flex flex-col gap-3 text-lg justify-center w-full lg:w-[25vw] items-center">
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
 
                         <Checkbox id="agree" checked={watch("agree")} onCheckedChange={(checked) => setValue("agree", checked)}/>
 
-                        <label htmlFor="agree" className="text-sm">
+                        <label htmlFor="agree" className="text-sm text-white">
                             Accept terms and conditions
                         </label>
                     </div>
@@ -231,8 +229,8 @@ const Form = () => {
 
                 </div>
 
-                <div className="flex gap-10 pb-6 text-lg justify-center items-center">
-                    {isSubmitting? <div>Please Wait</div> : <input disabled= {isSubmitting} type="submit" value="SUBMIT" className='rounded-full font-bold border border-green-500 w-full py-1.5 px-32 text-white bg-green-700' />}
+                <div className="flex gap-10 pb-8 text-lg justify-center items-center">
+                    {isSubmitting? <div>Please Wait</div> : <input disabled= {isSubmitting} type="submit" value="SUBMIT" className='rounded-full font-bold border border-slate-400 w-full py-1.5 px-25 text-white hover:text-slate-400 bg-slate-950 hover:bg-slate-800' />}
                     {/* <submit disabled= {isSubmitting}>Submit</submit> */}
                 </div>
 
