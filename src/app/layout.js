@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
-      <body className="flex flex-col overflow-hidden"
+      <body className="flex flex-col max-w-[100vw] overflow-hidden"
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className="flex justify-between items-center h-[10vh] border-b-2 px-3 max-w-[100vw] bg-slate-900">

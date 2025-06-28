@@ -10,13 +10,13 @@ import {
 
 const CategoryDescriptions = () => {
   return (
-    <div className="mx-auto mt-7 mb-5 md:my-0 lg:mb-8 lg:mt-0 w-[80vw] md:w-[75vw] lg:w-[74vw] h-[55vh] md:h-[66vh] lg:h-[60vh] justify-center items-center md:py-[5vh] px-5">
+    <div className="mx-auto mt-10 mb-10 md:my-0 lg:mb-11 lg:mt-0 w-[80vw] md:w-[75vw] lg:w-250 lg:max-w-[75vw] h-[55vh] md:h-[66vh] lg:h-[60vh] justify-center items-center md:py-[5vh] px-5">
       
         <Carousel
         //  className='flex justify-center items-center'
         >
 
-            <CarouselContent className='flex gap-8 lg:gap-5 pl-5 pr-1 md:px-5 w-[75vw] md:w-[70vw] h-[50vh] -ml-4 lg:-ml-2'>
+            <CarouselContent className='flex gap-8 mt-1 lg:gap-5 pl-5 pr-1 md:px-5 w-[75vw] md:w-[70vw] lg:w-[71vw] h-[50vh] -ml-4 lg:-ml-2'>
                 <CarouselItem className='basis-full md:basis-1/2 lg:basis-1/3 h-[50vh] pl-4 lg:pl-2 border-2 items-center justify-center flex flex-col gap-2'>
                     <div className="md:py-5 pr-5 text-center items-center justify-center flex flex-col gap-6 md:gap-4">
                         <h2 className="font-bold text-5xl md:text-xl pb-1">Singers</h2>
