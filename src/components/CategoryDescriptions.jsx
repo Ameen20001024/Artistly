@@ -10,7 +10,7 @@ import {
 
 const CategoryDescriptions = () => {
   return (
-    <div className="mx-auto mt-7 mb-5 md:my-0 lg:my-7 w-[80vw] md:w-[75vw] lg:w-[74vw] h-[55vh] md:h-[66vh] lg:h-[64vh] justify-center items-center md:py-[5vh] px-5">
+    <div className="mx-auto mt-7 mb-5 md:my-0 lg:mb-8 lg:mt-0 w-[80vw] md:w-[75vw] lg:w-[74vw] h-[55vh] md:h-[66vh] lg:h-[60vh] justify-center items-center md:py-[5vh] px-5">
       
         <Carousel
         //  className='flex justify-center items-center'
