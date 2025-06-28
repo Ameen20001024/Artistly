@@ -10,8 +10,8 @@ export default function Home() {
         {/* Here we'll have a hero section and few cards soon */}
 
         <Herosection/>
-        <div className="items-center justify-center mx-auto w-full h-[15vh] md:h-[10vh] md:py-3 mt-12 md:mt-10">
-            <h1 className="text-5xl lg:text-4xl font-extrabold mx-auto text-center">Find Artists By Genre</h1>
+        <div className="items-center justify-center mx-auto w-full min-h-[10vh] max-h-[15vh] md:h-[10vh] md:py-3 mt-10 md:mt-10 lg:mt-9">
+            <h1 className="text-5xl font-extrabold mx-auto text-center">Find Artists By Genre</h1>
         </div>
         <CategoryDescriptions/>
 

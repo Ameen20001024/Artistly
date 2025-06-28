@@ -79,7 +79,7 @@ const Form = () => {
     return (
         <div className="container lg:p-6 max-w-[100vw] overflow-x-hidden">
 
-            <form action="" className='flex flex-col gap-12 lg:gap-12 p-6 mt-3 md:mt-0 justify-center border-b-2 items-center' onSubmit={handleSubmit(onSubmit)}>
+            <form action="" className='flex flex-col gap-12 lg:gap-12 my-auto p-6 mt-3 md:mt-0 justify-center border-b-2 items-center' onSubmit={handleSubmit(onSubmit)}>
 
                 <div className='flex flex-col md:flex-row gap-12 md:gap-15 lg:gap-30'>
 
@@ -108,9 +108,9 @@ const Form = () => {
 
                     </div>
 
-                    <div className=' flex flex-col items-center justify-center gap-12 lg:gap-14 text-gray-400 '>
+                    <div className=' flex flex-col items-center justify-center md:mt-1 lg:mt-3 gap-12 lg:gap-16 text-gray-500 '>
 
-                        <div className="flex flex-col gap-10 lg:pb-2 text-lg justify-center items-center w-full lg:w-[20vw]">
+                        <div className="flex flex-col gap-10 lg:pb-2 text-lg justify-center items-center w-full lg:w-[29vw] lg:max-w-75">
 
                             <select id="feeRange" className="rounded-full border-2 border-slate-500 w-full py-2 px-8 text-center"
                                 {...register("feeRange", {required: { value: true, message: "Please select a fee range" },})}defaultValue="">
@@ -165,34 +165,37 @@ const Form = () => {
                             )}
                         </div>
 
-                        <div className="w-full lg:w-[20vw] flex flex-col gap-2">
+                        <div className="w-full lg:w-[29vw] lg:max-w-75 lg:h-14 flex flex-col gap-2">
                             {/* <label className="font-semibold">Languages Spoken</label> */}
 
                             <Popover>
-                                <PopoverTrigger asChild >
-                                    <div className="w-full justify-center py-1 rounded-3xl border-2 border-slate-500">
-                                        <Button variant="ghost" className='text-lg font-medium mx-auto w-full' >
-                                            {selectedLanguages.length > 0
+                                <PopoverTrigger asChild className='lg:h-11 text-gray-500'>
+                                    <Button
+                                    variant="ghost"
+                                    className="text-lg font-medium text-center items-center w-full justify-center border-2 border-slate-500 rounded-3xl py-1"
+                                    >
+                                        {selectedLanguages.length > 0
                                             ? selectedLanguages.join(", ")
                                             : "Select Languages"}
-                                        </Button>
-
-                                    </div>
+                                    </Button>
                                 </PopoverTrigger>
 
-                                <PopoverContent className="w-full p-2">
+                                <PopoverContent className="w-full p-2 h-80 overflow-y-auto">
                                     {languages.map((lang) => (
-                                        <div key={lang} className="flex items-center gap-2 py-1">
+                                    <div key={lang} className="flex items-center gap-2 py-1">
                                         <Checkbox
-                                            id={lang}
-                                            checked={selectedLanguages.includes(lang)}
-                                            onCheckedChange={() => toggleLanguage(lang)}
+                                        id={lang}
+                                        checked={selectedLanguages.includes(lang)}
+                                        onCheckedChange={() => toggleLanguage(lang)}
                                         />
-                                        {/* <label htmlFor={lang} className="text-sm">{lang}</label> */}
-                                        </div>
+                                        <label htmlFor={lang} className="text-sm">
+                                        {lang}
+                                        </label>
+                                    </div>
                                     ))}
                                 </PopoverContent>
                             </Popover>
+
 
                             {errors.languages && (
                                 <p className="text-red-500">{errors.languages.message}</p>
@@ -204,9 +207,9 @@ const Form = () => {
                 </div>
                 
                 
-                <div className="flex flex-col gap-3 text-lg justify-center w-full md:w-[87vw] lg:w-[47.7vw] h-[12vh] md:h-[12vh] lg:h-[18vh] items-center">
+                <div className="flex flex-col gap-3 text-lg justify-center w-full max-w-75 md:w-167 lg:w-180 h-[18vh] md:h-[12vh] lg:h-[18vh] items-center mx-auto">
                     
-                    <textarea  placeholder='Bio' id='bio' className='rounded-3xl border-2 border-slate-500 w-[70vw] md:w-full h-full overflow-scroll no-scrollbar py-1.5 px-1.5 lg:px-12 justify-center text-center  items-center' {...register("bio", {required: {value:true, message: "This field is required"}, minLength: {value:50, message: "minimum 50 charecters required"}, maxLength:{value:200, message:"maximum number of charecters is 200"}})} />
+                    <textarea  placeholder='Bio' id='bio' className='rounded-3xl border-2 border-slate-500 w-full lg:w-180 h-full overflow-scroll no-scrollbar py-1.5 px-1.5 lg:px-12 justify-center text-center  items-center' {...register("bio", {required: {value:true, message: "This field is required"}, minLength: {value:50, message: "minimum 50 charecters required"}, maxLength:{value:200, message:"maximum number of charecters is 200"}})} />
 
                     {errors.bio && <div className='text-red-500'> {errors.bio.message} </div>}
 
