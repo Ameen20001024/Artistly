@@ -1,6 +1,7 @@
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { ArtistProvider } from "@/components/contexts/ArtistsArraycontext";
 
 // const geistSans = Geist({
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
       >
         <header className="flex justify-between items-center h-[10vh] border-b-2 px-3 max-w-[100vw] bg-slate-900">
           <div>
-            Logo
+            <img className='w-18 mx-2' src="logos/ChatGPT Image Jul 14, 2025, 05_10_28 PM.png" alt="" />
           </div>
           <Navbar/>
         </header>
@@ -36,7 +37,7 @@ export default function RootLayout({ children }) {
         </ArtistProvider>
 
         <footer className="flex justify-center items-center h-[10vh] border-t-2 px-3 bg-slate-900">
-          we will have footer here
+          <Footer/>
         </footer>
 
       </body>
